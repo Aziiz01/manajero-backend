@@ -50,6 +50,9 @@ public class MethodeService implements IMethodeService {
             if (newMethode.getWhatif() != null) {
                 existingMethode.setWhatif(newMethode.getWhatif());
             }
+            if (newMethode.getConclusion() != null) {
+                existingMethode.setConclusion(newMethode.getConclusion());
+            }
             return methodeRepository.save(existingMethode);
         }).orElse(null);
     }
