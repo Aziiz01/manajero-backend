@@ -16,8 +16,6 @@ public class MethodeService implements IMethodeService {
     @Override
     public Methode addMethode(Methode methode) {
         return methodeRepository.save(methode);
-
-
     }
     @Override
     public List<Methode> getAllMethods() {
