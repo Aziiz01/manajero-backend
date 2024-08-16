@@ -14,4 +14,8 @@ public interface IProcessService {
     Process updateProcess(String id, Process process);
 
     void deleteProcess(String id);
-}
+    double calculateTaskCompletionRate(String processId);
+    double calculateFeatureImplementationProgress(String processId);
+    double calculateDesignReviewEffectiveness(String processId);
+    public double calculateDailyAdvancementRate(String processId);
+    }

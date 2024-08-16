@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -40,5 +42,9 @@ public class Process {
     private String unitTests;
     private String codeReviewNotes;
     private String integrationTestingNotes;
+    private LocalDate startDate; // New field for the process start date
+    private List<String> toDo;
+    private List<String> inProgress;
+    private  List<String> done;
 
 }

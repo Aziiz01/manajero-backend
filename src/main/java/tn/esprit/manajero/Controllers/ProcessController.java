@@ -20,6 +20,30 @@ public class ProcessController {
 
      ProcessService processService;
 
+    @GetMapping("/daily-advancement-rate/{processId}")
+    public ResponseEntity<Double> getDailyAdvancementRate(@PathVariable String processId) {
+        double dailyAdvancementRate = processService.calculateDailyAdvancementRate(processId);
+        return ResponseEntity.ok(dailyAdvancementRate);
+    }
+
+    @GetMapping("/task-completion-rate/{processId}")
+    public ResponseEntity<Double> getTaskCompletionRate(@PathVariable String processId) {
+        double taskCompletionRate = processService.calculateTaskCompletionRate(processId);
+        return ResponseEntity.ok(taskCompletionRate);
+    }
+
+    @GetMapping("/feature-implementation-progress/{processId}")
+    public ResponseEntity<Double> getFeatureImplementationProgress(@PathVariable String processId) {
+        double featureImplementationProgress = processService.calculateFeatureImplementationProgress(processId);
+        return ResponseEntity.ok(featureImplementationProgress);
+    }
+
+    @GetMapping("/design-review-effectiveness/{processId}")
+    public ResponseEntity<Double> getDesignReviewEffectiveness(@PathVariable String processId) {
+        double designReviewEffectiveness = processService.calculateDesignReviewEffectiveness(processId);
+        return ResponseEntity.ok(designReviewEffectiveness);
+    }
+
     @PostMapping
     public ResponseEntity<Process> createProcess(@RequestBody Process process) {
         Process createdProcess = processService.createProcess(process);
