@@ -16,7 +16,7 @@ import java.util.List;
 public class MethodeController {
     IMethodeService methodeService;
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public Methode addingMethode(@RequestBody Methode methode){
         return methodeService.addMethode(methode);
     }
